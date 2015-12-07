@@ -6,7 +6,7 @@ green=`tput setaf 2`
 yellow=`tput setaf 3`
 reset=`tput sgr0`
 
-find ~ -type d -name 'node_modules' 2> finderr | while read dir; do
+find ~ -type d -name 'node_modules' | while read dir; do
   if [ `grep -o "node_modules" <<< "$dir" | grep ""  -c` == 1 ]
   then
     if [ -f "$dir/.metadata_never_index" ]
